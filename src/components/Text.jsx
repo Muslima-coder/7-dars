@@ -1,8 +1,7 @@
-import React from 'react'
 
-const Text = () => {
+const Text = ({title,extraclass}) => {
   return (
-    <div>Text</div>
+    <p className={` font-normal hover:text-black duration-150 cursor-pointer ${extraclass}`}>{title}</p>
   )
 }
 
