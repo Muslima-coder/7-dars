@@ -9,7 +9,7 @@ const Sitebar = () => {
       <span className='absolute pl-[25px] pt-[18px]'>
       <SearchIcon/>
       </span>
-      <Input extraClass={"mb-[20px] w-[373px] text-[18px] text-[#5C6C79] bg-[#EFF3F4] border-none  p-0 pl-[64px] !py-[15px] rounded-[31px] "} type={'text'} placeholder={"Search Twitter"}/>
+      <Input extraClass={"mb-[20px] w-[373px] text-[18px]  text-[#5C6C79] bg-[#EFF3F4] border-none  p-0 pl-[64px] !py-[15px] rounded-[31px] "} type={'text'} placeholder={"Search Twitter"}/>
     </label>
 
     <SItebarDivContent>
