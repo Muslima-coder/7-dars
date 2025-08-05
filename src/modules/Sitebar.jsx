@@ -1,15 +1,72 @@
 import { Heading, Input, Link, ProfileUsers, SitebarContent, SItebarDivContent, Text } from '../components'
 import { SearchIcon, SettingIcon } from '../assets/icons'
 import { Mushtariy, Shuhratbek } from '../assets/images'
+import { useState } from 'react'
 
 const Sitebar = () => {
+     const [postList, setPostList] = useState (JSON.parse(localStorage.getItem("postList")) || [
+        {
+          id:1,
+          img: boburImg,
+          username:"Designsta",
+          email: "@inner · 25m",
+          content:"Twitterdagi ayol-erkak qarama-qarshiliginglardan o'zinglar zerikmadinglarmi?",
+          commentCount:10,
+          repostCount:1,
+          likeCount:8,
+          uploadCount:0,
+          statisticCount:0,
+          postImg:null
+        },
+        {
+          id:2,
+          img: boburImg,
+          username:"cloutexhibition",
+          email: "@RajLahoti · 22m",
+          content:"YPIP dasturining bu yilgi sezoni ham o'z nihoyasiga yetmoqda. Mentorlik davomida talaba va yangi bitiruvchilarni o'sayotganini ko'rib hursand bo'ladi odam.",
+          commentCount:0,
+          repostCount:5,
+          likeCount:9,
+          uploadCount:0,
+          statisticCount:0,
+          postImg:null
+        },
+        {
+          id:3,
+          img: boburImg,
+          username:"CreativePhoto",
+          email: "@cloutexhibition · 1h",
+          content:"Обетда.....Кечиринглар",
+          commentCount:10,
+          repostCount:1,
+          likeCount:8,
+          uploadCount:0,
+          statisticCount:0,
+          postImg:kebabImg
+        }
+      ])
+      
+    const [searchValue, setsearchValue] = useState("");
+
+    const handleSearch = (e) => {
+    const value = e.target.value.toLowerCase();
+    setsearchValue(value);
+
+    const filtered = postList.filter((item) =>
+      item.username.toLowerCase().includes(value) ||
+      item.email.toLowerCase().includes(value) ||
+      item.content.toLowerCase().includes(value)
+    );
+
+    setPostList(filtered);
+  };
   return (
    <div className="w-[402px] pt-[20px] pl-[28px] ">
     <label className='relative '>
       <span className='absolute pl-[25px] pt-[18px]'>
       <SearchIcon/>
       </span>
-      <Input extraClass={"mb-[20px] w-[373px] text-[18px]  text-[#5C6C79] bg-[#EFF3F4] border-none  p-0 pl-[64px] !py-[15px] rounded-[31px] "} type={'text'} placeholder={"Search Twitter"}/>
+      <input value={searchValue} onChange={handleSearch} className='searchInput mb-[20px] outline-none w-[373px] text-[18px]  text-[#5C6C79] bg-[#EFF3F4] border-none pl-[64px] py-[15px] rounded-[31px] ' type="text" placeholder='Search Twitter'  />
     </label>
 
     <SItebarDivContent>

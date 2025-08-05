@@ -1,4 +1,4 @@
-import { useState } from "react"
+import {  useState } from "react"
 import { ChooseImgIcon, GifIcon, ModeIcon,  SmileIcon,  VectorIcon } from "../../assets/icons"
 import { boburImg, kebabImg } from "../../assets/images"
 import { Button, Heading, Input, PostItem} from "../../components"
@@ -48,6 +48,7 @@ const Home = () => {
       postImg:kebabImg
     }
   ])
+  
 
   function handleCreatePost(e){
     e.preventDefault()
