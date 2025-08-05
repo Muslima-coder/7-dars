@@ -1,7 +1,7 @@
 
 const Text = ({title,extraclass}) => {
   return (
-    <p className={` font-normal hover:text-black duration-150 cursor-pointer ${extraclass}`}>{title}</p>
+    <p className={` font-normal text-[16px] text-black  cursor-pointer ${extraclass}`}>{title}</p>
   )
 }
 

@@ -1,13 +1,15 @@
 import { Bookmarks, Explore, Home, Lists, Messages, More, Notifications, Profile } from "../pages";
 import { PATH } from "./path";
 import { BookmarksIcon, ExploreIcon, HomeIcon, ListIcon, MessagesIcon, MoreIcon, NotificationIcon, ProfileIcon } from "../assets/icons"
+import { Suspense } from "react";
+import PageLoading from "./PageLoading";
 export const routeList = [
     {
         id: 1,
         path: PATH.main,
         title: "Home",
         icon: <HomeIcon/>,
-        element: <Home />,
+        element: <Suspense fallback={<PageLoading isLoading={true}/>}> <Home /></Suspense>,
         children: []
     },
     {

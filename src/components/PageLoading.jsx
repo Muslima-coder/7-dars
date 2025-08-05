@@ -1,9 +1,9 @@
-import { Loading, Logo } from '../assets/images'
+import { Loading2, Logo } from '../assets/images'
 
-const PageLoading = () => {
+const PageLoading = ({isLoading}) => {
   return (
     <div className='fixed right-0 left-0 top-0 bottom-0 flex justify-center items-center '>
-      <img className='loading-img w-[100px] h-[100px]' src={Logo} alt="loading" />
+      <img className={`${!isLoading && "loading-img" } w-[100px] h-[100px]`} src={isLoading ? Loading2 : Logo} alt="loading" />
     </div>
   )
 }

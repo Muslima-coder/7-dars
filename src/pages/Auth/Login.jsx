@@ -11,6 +11,7 @@ const Login = () => {
     e.preventDefault()
     setLoading(true)
     const data = {
+      username:e.target.username.value,
       email:e.target.email.value,
       password:e.target.password.value
     }
@@ -25,6 +26,7 @@ const Login = () => {
     <img src={Logo} alt="logo" />
     <Heading classList={"!my-[36px]"} type={"h1"} title={"Log in to Twitter"} />
     <form onSubmit={handleLogin} autoComplete="off">
+      <Input extraClass={"mb-[25px]"} name={"username"} type={"text"} placeholder={"Name"} />
       <Input extraClass={"mb-[25px]"} name={"email"} type={"text"} placeholder={"Phone number, email address"} />
       <Input extraClass={"mb-[25px]"} name={"password"} type={"password"} placeholder={"Password"} />
       <Button type={"submit"}>
